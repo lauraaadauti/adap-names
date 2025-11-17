@@ -25,7 +25,7 @@ export class Name {
             let escaped = '';
             for (let i = 0; i < component.length; i++) {
                 const char = component[i];
-                if (char === DEFAULT_DELIMITER || char === ESCAPE_CHARACTER) {
+                if (char === this.delimiter || char === ESCAPE_CHARACTER) {
                     escaped += ESCAPE_CHARACTER;
                 }
                 escaped += char;
@@ -33,7 +33,7 @@ export class Name {
             return escaped;
         });
         
-        return escapedComponents.join(DEFAULT_DELIMITER)
+        return escapedComponents.join(this.delimiter)
     }
 
     // @methodtype get-method
